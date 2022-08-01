@@ -8,7 +8,7 @@ function getComputerChoice() {
 
 // create function playRound(playerSelection, computerSelection)
 // that returns a string based on result. make playerSelection case-insensitive
-// add playerScore and computerScore variables to keep track of score
+// add playerScore and computerScore variables and code to keep track of score
 
 let playerScore = 0;
 let computerScore = 0;
@@ -31,8 +31,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// create function game() that loops playRound() 5 times. add feature that 
-// keeps track of score and reports a winner or loser after 5 rounds
+// create function game() that loops playRound() 5 times. add code that 
+// reports results after 5 rounds
 
 function game() {
     for (let i = 0; i < 5; i++) {
