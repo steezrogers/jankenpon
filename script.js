@@ -1,59 +1,41 @@
-// create function getComputerChoice() that randomly chooses
-// from 'Rock', 'Paper', and 'Scissors'
-
 const choices = ['Rock', 'Paper', 'Scissors']
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
 
-// create function playRound(playerSelection, computerSelection)
-// that returns a string based on result. make playerSelection case-insensitive
-// add playerScore and computerScore variables and code to keep track of score
-
 let playerScore = 0;
 let computerScore = 0;
 
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissors = document.querySelector('.scissors');
+const choose = document.querySelectorAll('.choice');
 
-function transition () {
-    this.classList.add('choosing');
+function choosing(choice) {
+    choice.classList.add('choosing');
 }
 
-choose.addEventListener('click', playRound);
+choose.forEach(choice => choice.addEventListener('click', function() {
+    choosing(choice);
+    playRound(choice.value);
+}));
+
+choose.forEach(choice => choice.addEventListener('transitionend', remove));
+
+function remove() {
+    this.classList.remove('choosing');
+}
 
 function playRound(playerSelection, computerSelection) {
-    if ((playerSelection.toLowerCase() === 'rock' && computerSelection === 'Scissors') ||
-        (playerSelection.toLowerCase() === 'paper' && computerSelection === 'Rock') ||
-        (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'Paper')) {
-        alert(`${playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase()} beats ${computerSelection}. Nice.`); 
+    computerSelection = getComputerChoice();
+    if ((playerSelection === 'Rock' && computerSelection === 'Scissors') ||
+        (playerSelection === 'Paper' && computerSelection === 'Rock') ||
+        (playerSelection === 'Scissors' && computerSelection === 'Paper')) {
+        alert(`${playerSelection} beats ${computerSelection}. Nice.`); 
         playerScore += 1;        
-    } else if ((playerSelection.toLowerCase() === 'rock' && computerSelection === 'Paper') ||
-        (playerSelection.toLowerCase() === 'paper' && computerSelection === 'Scissors') ||
-        (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'Rock')) {
-        alert(`${playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase()} loses to ${computerSelection}. Not nice.`);
+    } else if ((playerSelection === 'Rock' && computerSelection === 'Paper') ||
+        (playerSelection === 'Paper' && computerSelection === 'Scissors') ||
+        (playerSelection === 'Scissors' && computerSelection === 'Rock')) {
+        alert(`${playerSelection} loses to ${computerSelection}. Not nice.`);
         computerScore += 1;    
-    } else if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
+    } else if (playerSelection === computerSelection) {
         alert('Tie. Nice?');
     }
 }
-
-// create function game() that loops playRound() 5 times. add code that 
-// reports results after 5 rounds
-
-function game() {
-        let playerSelection = 
-        let computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-    }
-    if (playerScore > computerScore) {
-        alert(`Winner Winner Chicken Dinner! Player: ${playerScore} Computer: ${computerScore}`);
-    } else if (playerScore < computerScore) {
-        alert(`YOU DIED. Player: ${playerScore} Computer: ${computerScore}`)
-    } else if (playerScore == computerScore) {
-        alert(`There are no ties in Jan-Ken-Pon. Try again. Player: ${playerScore} Computer: ${computerScore}`);
-    }
-}
-
-game();
