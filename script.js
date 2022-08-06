@@ -13,6 +13,16 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+
+function transition () {
+    this.classList.add('choosing');
+}
+
+choose.addEventListener('click', playRound);
+
 function playRound(playerSelection, computerSelection) {
     if ((playerSelection.toLowerCase() === 'rock' && computerSelection === 'Scissors') ||
         (playerSelection.toLowerCase() === 'paper' && computerSelection === 'Rock') ||
@@ -26,8 +36,6 @@ function playRound(playerSelection, computerSelection) {
         computerScore += 1;    
     } else if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         alert('Tie. Nice?');
-    } else {
-        alert('Please enter a proper value.')
     }
 }
 
@@ -35,8 +43,7 @@ function playRound(playerSelection, computerSelection) {
 // reports results after 5 rounds
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt('Please choose "rock", "paper", or "scissors".');
+        let playerSelection = 
         let computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
     }

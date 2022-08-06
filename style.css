@@ -1,0 +1,28 @@
+* {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 500%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.rock, .paper, .scissors {
+    background-color: white;
+    border: solid 5px black;
+    border-radius: 15px;
+}
+
+button:hover {
+    cursor:pointer;
+}
+
+.choosing {
+    transform: scale(1.2);
+}
