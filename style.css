@@ -10,10 +10,15 @@ h1 {
 .buttons {
     display: flex;
     justify-content: space-evenly;
-    
 }
 
-.rock, .paper, .scissors {
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 250%;
+}
+
+.choice {
     background-color: white;
     border: solid 5px black;
     border-radius: 15px;
@@ -25,4 +30,5 @@ button:hover {
 
 .choosing {
     transform: scale(1.2);
+    transition-duration: 0.5s;
 }
