@@ -8,15 +8,19 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </head>
 
     <body>
         <h1>Rock Paper Scissors</h1>
         <div class="buttons">
-            <button class="rock" type="button"><img src="rock.png" width="200"></button>
-            <button class="paper" type="button"><img src="paper.png" width="200"></button>
-            <button class="scissors" type="button"><img src="scissors.png" width="200"></button>
+            <button id="rock" class="choice" value="Rock" type="button"><img src="rock.png" width="200"></button>
+            <button id="paper" class="choice" value="Paper" type="button"><img src="paper.png" width="200"></button>
+            <button id="scissors" class="choice" value="Scissors" type="button"><img src="scissors.png" width="200"></button>
+        </div>
+        <div class="score">
+            <p>You:</p>
+            <p>CPU:</p>
         </div>
     </body>
 </html>
