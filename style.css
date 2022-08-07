@@ -12,15 +12,16 @@ h2 {
     font-size: 300%;
 }
 
-.buttons {
+#choices {
     display: flex;
     justify-content: space-evenly;
 }
 
 #score {
     display: flex;
-    justify-content: space-evenly;
-    font-size: 250%;
+    justify-content: center;
+    gap: 20%;
+    font-size: 400%;
     font-weight: bolder;
 }
 
@@ -37,4 +38,23 @@ button:hover {
 .choosing {
     transform: scale(1.1);
     transition-duration: 0.1s;
+}
+
+#final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winner, .loser {
+    margin-top: 0;
+}
+
+.playAgain, .cont {
+    font-size: 200%;
+    font-weight: bold;
+    background-color: white;
+    border-width: 5px;
+    border-radius: 15px;
+    padding: 0 15px;
 }
