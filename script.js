@@ -65,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore += 1;
         cScore.textContent = computerScore;    
     } else if (playerSelection === computerSelection) {
-        tie.textContent = 'Tie. Try again.';
+        tie.textContent = 'Tie. Try again.'
         result.replaceChild(tie, result.firstChild);
     }
     endGame();
@@ -89,7 +89,7 @@ winner.textContent = 'YOU WIN!';
 
 const playAgain = document.createElement('button');
 playAgain.classList.add('playAgain');
-playAgain.textContent = 'Play Again';
+playAgain.textContent = 'PLAY AGAIN';
 
 const loser = document.createElement('h1');
 loser.classList.add('loser');
